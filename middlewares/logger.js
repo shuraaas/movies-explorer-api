@@ -1,14 +1,14 @@
 import winston from 'winston';
-import { logger } from 'express-winston';
+import expressWinston from 'express-winston';
 
-const requestLogger = logger({
+const requestLogger = expressWinston.logger({
   transports: [
     new winston.transports.File({ filename: 'request.log' }),
   ],
   format: winston.format.json(),
 });
 
-const errorLogger = logger({
+const errorLogger = expressWinston.errorLogger({
   transports: [
     new winston.transports.File({ filename: 'error.log' }),
   ],

@@ -42,7 +42,7 @@ const validateUpdateUser = celebrate({
         'string.min': 'Минимальная длина поля 2 символа',
         'string.max': 'Максимальная длина поля 30 символов',
       }),
-    email: Joi.string().min(2).max(30).email()
+    email: Joi.string().email()
       .required()
       .messages({
         'string.empty': 'Поле email должно быть заполнено',
@@ -65,14 +65,14 @@ const validateMovieId = celebrate({
 
 const validateMovieBody = celebrate({
   body: {
-    country: Joi.string().min(2).max(30).required()
+    country: Joi.string().required()
       .messages({
         'any.required': 'Поле country обязательно',
         'string.empty': 'Поле country должно быть заполнено',
         'string.min': 'Минимальная длина поля 2 символа',
         'string.max': 'Максимальная длина поля 30 символов',
       }),
-    director: Joi.string().min(2).max(30).required()
+    director: Joi.string().required()
       .messages({
         'any.required': 'Поле director обязательно',
         'string.empty': 'Поле director должно быть заполнено',
@@ -83,14 +83,14 @@ const validateMovieBody = celebrate({
       'any.required': 'Поле duration обязательно',
       'string.empty': 'Поле duration должно быть заполнено',
     }),
-    year: Joi.string().min(2).max(30).required()
+    year: Joi.string().required()
       .messages({
         'any.required': 'Поле year обязательно',
         'string.empty': 'Поле year должно быть заполнено',
         'string.min': 'Минимальная длина поля 2 символа',
         'string.max': 'Максимальная длина поля 30 символов',
       }),
-    description: Joi.string().min(2).max(30).required()
+    description: Joi.string().required()
       .messages({
         'any.required': 'Поле description обязательно',
         'string.empty': 'Поле description должно быть заполнено',
@@ -124,18 +124,18 @@ const validateMovieBody = celebrate({
       'any.required': 'Поле thumbnail обязательно',
       'string.empty': 'Поле thumbnail должно быть заполнено',
     }),
-    movieId: Joi.string().required().messages({
+    movieId: Joi.number().required().messages({
       'any.required': 'Поле movieId обязательно',
       'string.empty': 'Поле movieId должно быть заполнено',
     }),
-    nameRU: Joi.string().min(2).max(30).required()
+    nameRU: Joi.string().required()
       .messages({
         'any.required': 'Поле nameRU обязательно',
         'string.empty': 'Поле nameRU должно быть заполнено',
         'string.min': 'Минимальная длина поля 2 символа',
         'string.max': 'Максимальная длина поля 30 символов',
       }),
-    nameEN: Joi.string().min(2).max(30).required()
+    nameEN: Joi.string().required()
       .messages({
         'any.required': 'Поле nameEN обязательно',
         'string.empty': 'Поле nameEN должно быть заполнено',

@@ -7,14 +7,10 @@ const movieSchema = new Schema({
   country: {
     type: String,
     required: true,
-    minlength: 2,
-    maxlength: 30,
   },
   director: {
     type: String,
     required: true,
-    minlength: 2,
-    maxlength: 30,
   },
   duration: {
     type: Number,
@@ -23,14 +19,10 @@ const movieSchema = new Schema({
   year: {
     type: String,
     required: true,
-    minlength: 2,
-    maxlength: 30,
   },
   description: {
     type: String,
     required: true,
-    minlength: 2,
-    maxlength: 30,
   },
   image: {
     type: String,
@@ -62,20 +54,16 @@ const movieSchema = new Schema({
     required: true,
   },
   movieId: {
-    type: String,
+    type: Number,
     required: true,
   },
   nameRU: {
     type: String,
     required: true,
-    minlength: 2,
-    maxlength: 30,
   },
   nameEN: {
     type: String,
     required: true,
-    minlength: 2,
-    maxlength: 30,
   },
 }, {
   versionKey: false,

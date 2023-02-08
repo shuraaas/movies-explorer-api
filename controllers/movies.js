@@ -10,8 +10,10 @@ import {
 } from '../utils/constants.js';
 
 const getMovies = async (req, res, next) => {
+  const owner = req.user._id;
+
   try {
-    const movies = await Movie.find({}).populate('owner');
+    const movies = await Movie.find({ owner }).populate('owner');
     res.send(movies);
   } catch (err) {
     next(err);
