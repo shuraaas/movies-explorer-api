@@ -47,7 +47,6 @@ const validateUpdateUser = celebrate({
       .messages({
         'string.empty': 'Поле email должно быть заполнено',
         'string.min': 'Минимальная длина поля 2 символа',
-        'string.max': 'Максимальная длина поля 30 символов',
       }),
   },
 });
@@ -69,15 +68,11 @@ const validateMovieBody = celebrate({
       .messages({
         'any.required': 'Поле country обязательно',
         'string.empty': 'Поле country должно быть заполнено',
-        'string.min': 'Минимальная длина поля 2 символа',
-        'string.max': 'Максимальная длина поля 30 символов',
       }),
     director: Joi.string().required()
       .messages({
         'any.required': 'Поле director обязательно',
         'string.empty': 'Поле director должно быть заполнено',
-        'string.min': 'Минимальная длина поля 2 символа',
-        'string.max': 'Максимальная длина поля 30 символов',
       }),
     duration: Joi.number().required().messages({
       'any.required': 'Поле duration обязательно',
@@ -87,15 +82,11 @@ const validateMovieBody = celebrate({
       .messages({
         'any.required': 'Поле year обязательно',
         'string.empty': 'Поле year должно быть заполнено',
-        'string.min': 'Минимальная длина поля 2 символа',
-        'string.max': 'Максимальная длина поля 30 символов',
       }),
     description: Joi.string().required()
       .messages({
         'any.required': 'Поле description обязательно',
         'string.empty': 'Поле description должно быть заполнено',
-        'string.min': 'Минимальная длина поля 2 символа',
-        'string.max': 'Максимальная длина поля 30 символов',
       }),
     image: Joi.string().required().custom((value, helpers) => {
       if (validator.isURL(value)) {
@@ -132,15 +123,11 @@ const validateMovieBody = celebrate({
       .messages({
         'any.required': 'Поле nameRU обязательно',
         'string.empty': 'Поле nameRU должно быть заполнено',
-        'string.min': 'Минимальная длина поля 2 символа',
-        'string.max': 'Максимальная длина поля 30 символов',
       }),
     nameEN: Joi.string().required()
       .messages({
         'any.required': 'Поле nameEN обязательно',
         'string.empty': 'Поле nameEN должно быть заполнено',
-        'string.min': 'Минимальная длина поля 2 символа',
-        'string.max': 'Максимальная длина поля 30 символов',
       }),
   },
 });
